@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+        }
+        .cart-item div {
+            margin-left: 10px;
+        }
+        .quantity-btn {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cartItems"></div>
+    <p>Total: $<span id="total">0.00</span></p>
+    <span id="badge">0</span>
+
+    <form id="checkoutForm">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Full Name" name="fullName" required>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="email" class="form-control" placeholder="Email" name="email" required>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="Phone Number" name="phoneNumber" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="State" name="state" required>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" placeholder="City" name="city" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Address" name="address" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Zip Code" name="zipCode" required>
+        </div>
+        <div class="form-group">
+            <label for="orderNotes" class="form-label">Order Notes</label>
+            <textarea class="form-control" id="orderNotes" name="orderNotes" rows="3" placeholder="Notes about your order" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const cartItems = document.getElementById('cartItems');
+        const total = document.getElementById('total');
+        const badge = document.getElementById('badge');
+        let totalPrice = 0;
+        let cartCount = 0;
+
+        document.querySelectorAll('.addToCartButton').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.parentElement;
+                const itemName = item.querySelector('a').innerText;
+                const itemPrice = parseFloat(item.querySelector('p').innerText.replace('$', ''));
+                const itemImage = item.querySelector('img').src;
+
+                let existingCartItem = null;
+
+                // Check if item already exists in cart
+                cartItems.childNodes.forEach(node => {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        const name = node.querySelector('h4').innerText;
+                        if (name === itemName) {
+                            existingCartItem = node;
+                        }
+                    }
+                });
+
+                if (existingCartItem) {
+                    // If item exists, update quantity and total price
+                    const quantityElement = existingCartItem.querySelector('.quantity');
+                    if (quantityElement) {
+                        let quantity = parseInt(quantityElement.textContent) + 1;
+                        quantityElement.textContent = quantity;
+
+                        const priceElement = existingCartItem.querySelector('.price');
+                        if (priceElement) {
+                            const itemTotalPrice = itemPrice * quantity;
+                            priceElement.textContent = `$${itemTotalPrice.toFixed(2)}`;
+                        }
+
+                        totalPrice += itemPrice;
+                    }
+                } else {
+                    // If item doesn't exist, create new cart item
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `
+                        <span class="remove-item">&times;</span>
+                        <div style="display: flex; align-items: center;">
+                            <img src="${itemImage}" alt="${itemName}" style="width: 60px; height: 60px;">
+                            <div style="margin-left: 5px;">
+                                <h4>${itemName}</h4>
+                                <p class="price">$${itemPrice.toFixed(2)}</p>
+                                quantity: <button class="quantity-btn minus-btn">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn plus-btn">+</button>
+                            </div>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+
+                    totalPrice += itemPrice;
+                    cartCount++;
+                }
+
+                total.innerText = `$${totalPrice.toFixed(2)}`;
+                badge.textContent = cartCount;
+                updateCartDisplay();
+                saveCartData();
+            });
+        });
+
+        document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const cartItemsData = [];
+            document.querySelectorAll('.cart-item').forEach(cartItem => {
+                const itemName = cartItem.querySelector('h4').innerText;
+                const itemPrice = parseFloat(cartItem.querySelector('.price').innerText.replace('$', ''));
+                const itemQuantity = parseInt(cartItem.querySelector('.quantity').innerText);
+                const itemImage = cartItem.querySelector('img').src;
+
+                cartItemsData.push({ name: itemName, price: itemPrice, quantity: itemQuantity, image: itemImage });
+            });
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            data.cartItems = cartItemsData;
+
+            fetch('/checkout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Order processed:', result);
+                // Redirect or display success message
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        function updateCartDisplay() {
+            // Update the cart display
+        }
+
+        function saveCartData() {
+            // Save cart data to localStorage or any other storage
+        }
+    </script>
+</body>
+</html>

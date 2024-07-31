@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.css">
+  <style>
+    .password-strength {
+      display: none;
+      margin-top: 5px;
+    }
+    .password-strength span {
+      display: inline-block;
+      width: 20%;
+      height: 5px;
+      background-color: #ddd;
+    }
+    .password-strength.weak span:nth-child(-n+1) {
+      background-color: #ff6b6b;
+    }
+    .password-strength.medium span:nth-child(-n+3) {
+      background-color: #ff9f43;
+    }
+    .password-strength.strong span {
+      background-color: #1dd1a1;
+    }
+    .input-group-append {
+      cursor: pointer;
+    }
+    .invalid-feedback {
+      display: none;
+    }
+    .is-invalid ~ .invalid-feedback {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <form action="/register" method="post">
+    <div class="container mt-5 registration">
+      <div class="row">
+        <div class="col-md-4 regicon text-center">
+          <i class="bi bi-person-add"></i>
+        </div>
+        <div class="col-md-8">
+          <h2 class="font-weight-bold d-inline">Register Yourself</h2>
+          <p>Your personal data will be used to support your experience throughout this website, to manage access to your account.</p>
+        </div>
+      </div>
+      <div id="step1" class="step active">
+        <div class="form-group">
+          <label for="name" class="pb-2">FullName:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+            <input type="text" class="form-control reg" id="name" name="name" placeholder="Your name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="pt-3 pb-2">Email: <span class="contactspan">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input type="email" class="form-control reg" id="email" name="email" placeholder="Your email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="pt-3 pb-2">Phone(Optional):</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+            <input type="text" class="form-control reg" id="phone" name="phone" placeholder="Phone number">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pass" class="pt-3 pb-2">Password:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input type="password" class="form-control reg" id="pass" name="pass" placeholder="Password" required>
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="bi bi-eye" id="togglePassword"></i></span>
+            </div>
+            <div class="invalid-feedback">Passwords do not match.</div>
+          </div>
+          <div class="password-strength" id="password-strength">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <button type="button" class="btn btn-secondary mt-2" id="generate-password">Generate Strong Password</button>
+        </div>
+        <div class="form-group">
+          <label for="pass-confirm" class="pt-3 pb-2">Password confirmation:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input type="password" class="form-control reg" id="pass-confirm" name="pass-confirm" placeholder="Password confirmation" required>
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="bi bi-eye" id="toggleConfirmPassword"></i></span>
+            </div>
+            <div class="invalid-feedback">Passwords do not match.</div>
+          </div>
+        </div>
+        <div class="form-check pt-3">
+          <input type="checkbox" class="form-check-input" id="policyCheck" required>
+          <label class="form-check-label" for="policyCheck">I agree to the Terms and Privacy Policy</label>
+        </div>
+        <button type="submit" class="regbtn">Registration</button>
+        <p class="text-center pt-2">Already have an account?<a href="login.html">Login</a></p>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    const password = document.getElementById('pass');
+    const confirmPassword = document.getElementById('pass-confirm');
+    const passwordStrength = document.getElementById('password-strength');
+    const generatePasswordBtn = document.getElementById('generate-password');
+    const togglePassword = document.getElementById('togglePassword');
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+
+    password.addEventListener('input', updatePasswordStrength);
+    password.addEventListener('input', checkPasswordMatch);
+    confirmPassword.addEventListener('input', checkPasswordMatch);
+    generatePasswordBtn.addEventListener('click', generateStrongPassword);
+    togglePassword.addEventListener('click', () => togglePasswordVisibility(password, togglePassword));
+    toggleConfirmPassword.addEventListener('click', () => togglePasswordVisibility(confirmPassword, toggleConfirmPassword));
+
+    function updatePasswordStrength() {
+      const strength = getPasswordStrength(password.value);
+      passwordStrength.style.display = 'block';
+      passwordStrength.className = 'password-strength ' + strength;
+    }
+
+    function getPasswordStrength(password) {
+      let strength = 0;
+      if (password.length >= 8) strength++;
+      if (/[a-z]/.test(password)) strength++;
+      if (/[A-Z]/.test(password)) strength++;
+      if (/[0-9]/.test(password)) strength++;
+      if (/[^a-zA-Z0-9]/.test(password)) strength++;
+
+      if (strength <= 2) {
+        return 'weak';
+      } else if (strength <= 4) {
+        return 'medium';
+      } else {
+        return 'strong';
+      }
+    }
+
+    function generateStrongPassword() {
+      const length = 12;
+      const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
+      let passwordValue = "";
+      for (let i = 0, n = charset.length; i < length; ++i) {
+        passwordValue += charset.charAt(Math.floor(Math.random() * n));
+      }
+      password.value = passwordValue;
+      confirmPassword.value = passwordValue;
+      updatePasswordStrength();
+      checkPasswordMatch();
+    }
+
+    function togglePasswordVisibility(inputField, icon) {
+      const type = inputField.type === 'password' ? 'text' : 'password';
+      inputField.type = type;
+      icon.classList.toggle('bi-eye');
+      icon.classList.toggle('bi-eye-slash');
+    }
+
+    function checkPasswordMatch() {
+      if (password.value !== confirmPassword.value) {
+        confirmPassword.classList.add('is-invalid');
+      } else {
+        confirmPassword.classList.remove('is-invalid');
+      }
+    }
+  </script>
+</body>
+</html>

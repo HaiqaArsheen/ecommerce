@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Document</title>
+ <link rel="stylesheet" href="../assests/style.css">
+ <style>
+   .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 26px;
+            justify-content: center;
+            align-items: center;
+        }
+  .card {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    min-width: 20%;
+    text-align: center;
+      border: 1px solid #ccc;
+      padding: 36px;
+      margin: 16px;
+      border-radius: 8px;
+      box-shadow: #7F6933 0px 30px 60px -12px inset, #e6a912 0px 18px 36px -18px inset;  }
+      .card:hover {
+            transform: scale(1.05);
+        }
+</style>
+</head>
+<body>
+     <!--- SECTION 1 THE UPPER BAR -->
+     <nav class="navbar bg-body-tertiary top">
+      <div class="container-fluid">
+          <div class="header ms-5 ps-5">
+          <i class="bi bi-telephone"><a>03070879467</a></i>
+          <i class="bi bi-envelope"><a>easyshopping@gmail.com</a></i>
+          </div>
+        <form class="d-flex  me-5 ms-auto login">
+          <li class=" dropdown ">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">
+                US
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">PK</a></li>
+                
+              </ul>
+            </li> 
+            <i class="bi bi-person mt-4"><a href="login.html">LOGIN</a></i>          </form>
+      </div>
+    </nav>
+    <!--SECTION 2 THE NAVBAR-->
+  <nav class="navbar navbar-expand-lg  fixed  ">
+      <div class="container-fluid">
+       <img class="ms-5 ps-5 navbar-brand" src="../img/home/logo.png">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ms-auto  mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link  color" aria-current="page" href="index.html">HOME</a>
+            </li>
+            
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle color" href="#" role="button" data-bs-toggle="dropdown">
+                CATEGORIES
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="winderwares.html">Winterwear</a></li>
+                <li><a class="dropdown-item" href="bottomse.html">Bottoms</a></li>
+                <li><a class="dropdown-item" href="chk.html">Hand Bags</a></li>
+                <li><a class="dropdown-item" href="jeans.html">Jeans</a></li>
+                <li><a class="dropdown-item" href="westerntop.html">Western Tops</a></li>
+                <li><a class="dropdown-item" href="tunics.html">Tunics</a></li>
+                <li><a class="dropdown-item" href="trouses.html">Trouser</a></li>
+
+                <li><a class="dropdown-item" href="#">Jewellers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="products.html">PRODUCTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="FAQ.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+          <form class="d-flex manuicon me-5 ms-auto ">
+              <i class="bi bi-heart "></i>  
+              <i class="bi bi-search"></i>             
+              <i class="bi bi-cart3"></i> 
+              <div class="badge">0</div>
+            </form>
+        </div>
+      </div>
+    </nav>
+    <!--Bckground pic-->
+    <!-- <div class="containerimg">
+      <div class="overlay">
+        <div class="textimgee">ENJOY SHOPPING WITH US
+        </div>
+      </div>
+    </div> -->
+    <!----- SEARCH BAR -->
+   <!-- <div class="searchbar">
+      <label for="sort-option" class="me-3">Sort by:</label>
+      <select id="sort-option "  class="text-right" onchange="sortCards(this.value)">
+        <option value="Default" >Default</option>
+
+        <option value="A-Z" onclick="sortCards('A-Z')">A-Z</option>
+        <option value="Z-A" onclick="sortCards('Z-A')">Z-A</option>
+      </select>
+    
+   </div> -->
+    <!-- CARD 1-->
+   
+      <!-- <div class="card-container">
+        <div class="containere">
+            <h2 class="mt-5">PRODUCT CATEGORIES</h2>
+            <ul class="list">
+              <li>
+                <a href="winderware.html" style="text-decoration: none; color: black;">  + Winterwear</a>
+               
+              </li>
+              <li>
+                <a href="#" style="text-decoration: none; color: black;"> +Jewellers</a><span class="sign">+</span>
+                <div class="dropdown">
+                  <div class="dropdown-content">
+                    <a href="#">+ Braclets</a>
+                    <a href="#">+ Pendant</a>
+                    <a href="#">+ Loose Gemstones</a>
+                  </div>
+                </div>
+               
+    
+              </li>
+              <li><a href="bottom.html" style="text-decoration: none; color: black;"> + Bottoms</a></li>
+              <li><a href="trouser.html" style="text-decoration: none; color: black;"> + Trouser</a></li>
+              <li><a href="jeans.html" style="text-decoration: none; color: black;"> + Jeans</a></li>
+              <li><a href="bags.html" style="text-decoration: none; color: black;"> + Hand Bgs</a></li>
+              <li><a href="westeren.html" style="text-decoration: none; color: black;"> + Western Top</a></li>
+              <li><a href="tunic.html" style="text-decoration: none; color: black;"> + Tunics</a></li>
+              <!-- <li> + Fire Agents</li> -->
+              <!-- Add more list items as needed -->
+            <!-- </ul>
+          </div>
+          <div class="card textcard">
+            <a href="westeren.html">
+            <div class="card-buttons">
+                <button class="newarival">New Arival</button>
+                <button class="fifty">-50%</button>
+            </div>
+            <img src="../img/western/17.webp" alt="Card Image">
+            <!-- <button class="button-hidden add-to-cart-btn" >ADD TO CART</button> --
+          
+           <a href="#"> <div class="card-title texttitle">Western</div></a>
+            <p>$200.00 <span>$400.00</span></p>
+            <div class="value"><i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+            </div>
+            </a>
+          </div>
+          <div class="card textcard">
+            <a href="bottom.html">
+            <div class="card-buttons">
+                <button class="newarival">New Arival</button>
+                <button class="fifty">-50%</button>
+          
+            </div>
+            <img src="../img/bottoms/12.webp" alt="Card Image"> -->
+            <!-- <button class="button-hidden add-to-cart-btn" >ADD TO CART</button> -->
+          
+           <!-- <a href="#"> <div class="card-title texttitle">Bottoms</div></a>
+           <p>$300.00 <span>$600.00</span></p>          <div class="value"><i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+            </div>
+          </a>
+          </div>
+          <div class="card textcard">
+            <a href="trouser.html">
+              <div class="card-buttons">
+                  <button class="newarival">New Arivals</button>
+          
+                  <button class="fifty">-50%</button>
+              </div>
+              <img    src="../img/trouser/19.webp" alt="Card Image">
+              <!-- <button class="button-hidden add-to-cart-btn" >ADD TO CART</button> --
+          
+              <a href="#"> <div class="card-title texttitle">Trouser</div></a>
+              <p>$250.00 <span>$500.00</span></p>
+              <div class="value"><i class="bi bi-star"></i>
+                  <i class="bi bi-star"></i>
+                  <i class="bi bi-star"></i>
+                  <i class="bi bi-star"></i>
+                  <i class="bi bi-star"></i>
+              </div>
+          
+            </a>
+          </div> -->
+      
+        <!-- Add more cards here (up to 7 in a row) --
+    </div> -->
+      
+    <!-- <div class="card-container mt-5">
+      <div class="containere" >
+        <h2 class="mt-5">PRODUCT TAGS</h2>
+
+        <div class="column">
+          <a href="#" class="border-anchor">Handmade Ring(182)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">New Arrival (143)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">Silver 925 Ring(101)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">Sterling Silver 925(100)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">Sterling Silver Ring (85)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">Sterling silver (65)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">Handmade Band (48)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">Handmade (40)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">Adjustable (30)</a>
+        </div>
+        <div class="column">
+          <a href="#" class="border-anchor mt-1">Natural Agate (26)</a>
+        </div>
+         
+        </div>
+      
+<div class="card textcard">
+  <a href="jeans.html">
+  <div class="card-buttons">
+      <button class="newarival">New Arival</button>
+
+      <button class="fifty">-50%</button>
+  </div>
+  <img    src="../img/products/4.jpg" alt="Card Image">
+  <!-- <button class="button-hidden add-to-cart-btn" >ADD TO CART</button> --
+
+  <a href="#"> <div class="card-title texttitle">Jeans</div></a>
+  <p>$205.00 <span>$410.00</span></p>
+  <div class="value"><i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+  </div>
+
+  </a>
+</div>
+<div class="card textcard">
+  <div class="card-buttons">
+      <button class="newarival">New Arival</button>
+      <button class="fifty">-50%</button>
+  </div>
+  <img src="../img/products/5.jpg" alt="Card Image">
+  <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+ <a href="#"> <div class="card-title texttitle">Moissantie Diamond Ring for women</div></a>
+  <p>$225.00 <span>$450.00</span></p>
+  <div class="value"><i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+  </div>
+
+</div>
+<div class="card textcard">
+  <div class="card-buttons">
+      <button class="newarival">New Arival</button>
+      <button class="fifty">-50%</button>
+  </div>
+  <img src="../img/products/6.webp" alt="Card Image">
+  <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+ <a href="#"> <div class="card-title texttitle">Natural Amethyst Ring for woman</div></a>
+  <p>$200.00 <span>$400.00</span></p>
+  <div class="value"><i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+      <i class="bi bi-star"></i>
+  </div>
+
+</div>
+
+     
+      <!-- Add more cards here (up to 7 in a row) --
+  </div>
+  <div class="card" style="    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;"></div> -->
+
+
+  <!-- <div class="card-container mt-5">
+    <div class="containere">
+    <div class="colwrapper">
+      <header class="colheader">
+        <h2> By PRICE</h2>
+      </header>
+      <div class="price-input">
+        <div class="field">
+          <input type="number" class="input-min" value="2500" /><span>USD</span>
+        </div>
+        <div class="seperator">-</div>
+        <div class="field">
+          <input type="number" class="input-max" value="7500" /><span>USD</span>
+        </div>
+      </div>
+      <div class="slider">
+        <div class="progress"></div>
+      </div>
+      <div class="range-input">
+        <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
+        <input type="range" class="range-max" min="0" max="10000"
+        value="7500" step="100">
+    </div>
+    </div>
+    <div class="lowerborder"></div>
+
+    <!--- women button --
+    <div class="productbtn">
+      <h2 class="text-center colheader">BY GENDER</h2>
+      <button>Women</button>
+    </div>
+    <div class="lowerborder"></div>
+    <div class="twoproductbtn">
+      <h2 class="colheader">BY TYPE</h2>
+      <button>Gold</button>
+      <button>Silver</button>
+    </div>
+
+
+    </div>
+  
+    <div class="card textcard">
+      <div class="card-buttons">
+          <button class="newarival">New Arival</button>
+          <button class="fifty">-50%</button>
+    
+      </div>
+      <img src="../img/products/7.jpg" alt="Card Image">
+      <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+    
+     <a href="#"> <div class="card-title texttitle">Natural Moonstone Ring for woman</div></a>
+      <p>$160.00<span>$320.00</span></p>
+      <div class="value"><i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+      </div>
+    
+    </div>
+    <div class="card textcard">
+      <div class="card-buttons">
+          <button class="newarival">New Arival</button>
+    
+          <button class="fifty">-50%</button>
+      </div>
+      <img    src="../img/products/8.jpg" alt="Card Image">
+      <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+    
+      <a href="#"> <div class="card-title texttitle">Kunzite Ring for women.</div></a>
+      <p>$255.00 <span>$510.00</span></p>
+      <div class="value"><i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+      </div>
+    
+    
+    </div>
+    <div class="card textcard">
+      <div class="card-buttons">
+          <button class="newarival">New Arivals</button>
+          <button class="fifty">-50%</button>
+      </div>
+      <img src="../img/products/9.jpg" alt="Card Image">
+      <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+    
+     <a href="#"> <div class="card-title texttitle">Garnet Ring for women</div></a>
+      <p>$120.00 <span>$140.00</span></p>
+      <div class="value"><i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+      </div>
+    
+    </div>
+   
+   
+    <!-- Add more cards here (up to 7 in a row) --
+</div>
+
+<div class="card-container mt-5">
+  <div class="containere" style="margin-left: 10%; background-color: white;" >
+   
+     
+    </div>
+    <div class="card textcard">
+      <div class="card-buttons">
+          <button class="newarival">New Arivals</button>
+          <button class="fifty">-50%</button>
+      </div>
+      <img src="../img/products/10.jpg" alt="Card Image">
+      <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+    
+     <a href="#"> <div class="card-title texttitle">Moissanite Ring for women</div></a>
+      <p>$130.00 <span>$260.00</span></p>
+      <div class="value"><i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+      </div>
+    
+    </div>
+    <div class="card textcard">
+      <div class="card-buttons">
+          <button class="newarival">New Arival</button>
+          <button class="fifty">-50%</button>
+    
+      </div>
+      <img src="../img/products/11.jpg" alt="Card Image">
+      <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+    
+     <a href="#"> <div class="card-title texttitle">Lapis Lazuli Ring for women</div></a>
+      <p>$170.00<span> $340.00</span></p>
+      <div class="value"><i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+      </div>
+    
+    </div>
+    <div class="card textcard">
+      <div class="card-buttons">
+          <button class="newarival">New Arival</button>
+    
+          <button class="fifty">-50%</button>
+      </div>
+      <img    src="../img/products/12.jpg" alt="Card Image">
+      <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+    
+      <a href="#"> <div class="card-title texttitle">Turquoise ring for women</div></a>
+      <p>$242.00 <span>$485.00</span></p>
+      <div class="value"><i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+      </div>
+    
+    
+    </div>
+ 
+ 
+  
+  <!-- Add more cards here (up to 7 in a row) --
+</div> -->
+<div class="cards-container" id="cards-container"></div>
+
+   
+
+<!--- SECTION 11 THE 1 ROW AND THREE COLUMN -->
+<div class="row me-0 rowfirst pt-5 mt-3">
+  <div class="column colfirst col-md-4 col-12  ">
+    <h2 class="ps-5">CUSTOMER SERVICES</h2>
+    <ul>
+      <a href="login.html"><li>Login</li></a>
+      <a href="registration.html"><li>Registration</li></a>
+      <a href="contact.html"><li>Contact</li></a>
+      <a href="cookiespolicy.html"><li>Cookies Policy</li></a>
+
+    </ul>
+  </div>
+  <div class="column colfirst col-md-4 col-12 ">
+    <h2>Easy Shopping</h2>
+    <h4> Address: </h4>
+    <p>Islamabad | F-6 Markaz</p>
+      <h4>Hotline:<span> 03155364953</span></h4>
+      <h4>Email: <span>eayshopping@gmail.com</span></h4>
+  </div>
+  <div class="column colfirst col-md-4 col-12">
+    <h2>SUBSCRIBE & RECEIVE 10% OFF YOUR FIRST ORDER</h2>
+    
+  <div class="input">  <input type="email" placeholder="Enter your email"></div>
+    <h4 class="mt-4">CONNECT WITH US</h4>
+    <div class="social-icons">
+      <!-- Add social media icons here -->
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-tiktok"></i>    </div>
+  </div>
+</div>
+<!---SECTION 12 LAST SECTION -->
+<div class="lastnav">
+<div class="navbar fixed-bottom lastnav ">
+  <div class="container-fluid">
+    <p class="navbar-brand" >Your experience on this site will be improved by allowing cookies<span> Cookie Policy</span> </p>
+    <a href="#"><button>ALLOW COOKIES</button></a>
+  </div>
+</div>
+</div>
+
+<!----DESIGN CART -->
+<div class="cart" id="cart" >
+ 
+  <span id="close-cart" class="close-icon">&times;</span>
+  <h2>Shopping Cart</h2>
+  <div class="cart-items" id="cart-items"></div>
+  <p> Sub Total: <span id="total" >$0</span></p>
+  <button id="checkout-btn">Checkout</button>
+  <button id="view-cart-btn" >View Cart</button>
+
+</div>
+
+
+
+<script>
+  // Function to fetch table names and display them in cards
+  async function fetchTableNames() {
+      try {
+          const response = await fetch('/api/getTableNames');
+          const tableNames = await response.json();
+
+          const container = document.getElementById('cards-container');
+          container.innerHTML = '';
+
+          const excludedTables = ['customer', 'user','orderitem'];
+
+          tableNames
+              .filter(name => !excludedTables.includes(name))
+              .forEach(name => {
+                  const card = document.createElement('div');
+                  card.className = 'card';
+                  card.innerText = name;
+                  card.onclick = () => {
+                      window.location.href = `/${name}.html`;
+                  };
+                  container.appendChild(card);
+              });
+      } catch (error) {
+          console.error('Error fetching table names:', error);
+      }
+  }
+
+  // Fetch table names when the page loads
+  window.onload = fetchTableNames;
+</script>
+
+<script src="../js/main.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+</body>
+</html>

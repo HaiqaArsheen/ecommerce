@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Navbar</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../assests/style.css"> 
+</head>
+
+<body style="overflow-x:hidden ;">
+
+    <!--- SECTION 1 THE UPPER BAR -->
+    <nav class="navbar bg-body-tertiary top">
+        <div class="container-fluid">
+            <div class="header ms-5 ps-5">
+            <i class="bi bi-telephone"><a>03070879467</a></i>
+            <i class="bi bi-envelope"><a>easyshopping@gmail.com</a></i>
+            </div>
+          <form class="d-flex  me-5 ms-auto login">
+            <li class=" dropdown ">
+                <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">
+                  US
+                </a>
+              
+              <i class="bi bi-person mt-4"><a href="login.html">LOGIN</a></i> 
+              <i class="bi bi-person mt-4"><a href="admin.html"> ADMIN</a></i> 
+
+                     </form>
+        </div>
+      </nav>
+      <!--SECTION 2 THE NAVBAR-->
+    <nav class="navbar navbar-expand-lg  fixed  ">
+        <div class="container-fluid">
+         <img class="ms-5 ps-5 navbar-brand" src="../img/home/logo.png">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ms-auto  mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link  color" aria-current="page" href="index.html">HOME</a>
+              </li>
+              
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle color" href="#" role="button" data-bs-toggle="dropdown">
+                  CATEGORIES
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="winderwares.html">Winterwear</a></li>
+                  <li><a class="dropdown-item" href="bottomse.html">Bottoms</a></li>
+                  <li><a class="dropdown-item" href="products.html">Hand Bags</a></li>
+                  <li><a class="dropdown-item" href="jeans.html">Jeans</a></li>
+                  <li><a class="dropdown-item" href="westerntop.html">Western Tops</a></li>
+                  <li><a class="dropdown-item" href="tunics.html">Tunics</a></li>
+                  <li><a class="dropdown-item" href="trouses.html">Trouser</a></li>
+
+                  <li><a class="dropdown-item" href="#">Jewellers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="products.html">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="FAQ.html">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+            <form class="d-flex manuicon me-5 ms-auto ">
+                <i class="bi bi-heart "></i>  
+                <i class="bi bi-search"></i>             
+                <i class="bi bi-cart3 "></i>  
+                <div class="badge">0</div>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!--SECTION 3 THE BACKGROUND SLIDER-->
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      
+        <div class="carousel-inner">
+          <div class="carousel-item active sliderimg">
+            <img src="../img/sli2.webp" class="d-block w-100" alt="...">
+          <!--  <div class="carousel-caption d-none d-md-block reveal">
+              <h5>BEST WOMEN RINGS</h5>
+              <p>Save more with coupn $ 20% off.</p>
+              <button>SHOP NOW</button>
+            </div>-->
+          </div>
+          <div class="carousel-item sliderimg">
+            <img src="../img/sl2.webp" class="d-block w-100" alt="...">
+           <!---- <div class="carousel-caption d-none d-md-block">
+                <h5>BEST JEWELLERY</h5>
+                <p>Save more with coupn $ 20% off.</p>
+                <button>SHOP NOW</button>
+            </div>-->
+          </div>
+          <div class="carousel-item sliderimg">
+            <img src="../img/sl3.webp" class="d-block w-100" alt="...">
+          <!---  <div class="carousel-caption d-none d-md-block">
+                <h5>TRADDING COLLECTIONS</h5>
+              <p>Save more with coupn $ 20% off.</p>
+              <button>SHOP NOW</button>
+            </div>-->
+          </div>
+          <div class="carousel-item sliderimg">
+            <img src="../img/sl4.webp" class="d-block w-100" alt="...">
+           <!---- <div class="carousel-caption d-none d-md-block">
+                <h5>TRENDING</h5>
+                <p>Save more with coupn $ 20% off.</p>
+                <button>SHOP NOW</button>
+            </div>-->
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev" >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+      <!--SECTION 7CARD TOP CATEGORIES-->
+      <div class="text-center mt-5 text">TOP CATEGORIES</div>
+      <div class="text-center mb-5 paragraph">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. PHASELLUS BLANDIT MASSA ENIM NULLAM NUNC VARIUS.</div>
+      <div class="card-container">
+        <div class=" card table-borderless">
+          <a href="winderwares.html" class="card-title texttitle">
+            <img src="../img/11.1.webp" alt="Card Image">
+            <div class="card-title">Winterwear</div></a>
+        </div>
+        <div class="  card">
+          <a href="jeans.html" class="card-title texttitle">
+            <img src="../img/11.2.webp" alt="Card Image">
+            <div class="card-title">Jeans</div></a>
+        </div>
+        <div class="  card">
+          <a href="trouses.html" class="card-title texttitle">
+            <img src="../img/11.3.webp" alt="Card Image">
+            <div class="card-title">Trouses</div></a>
+        </div>
+        <div class= "  card">
+          <a href="bottomse.html" class="card-title texttitle">
+            <img src="../img/11.5.webp" alt="Card Image">
+            <div class="card-title">Bottoms</div></a>
+        </div>
+        <div class="  card">
+          <a href="chk.html" class="card-title texttitle">
+            <img src="../img/11.6.webp" alt="Card Image">
+            <div class="card-title">Hand Bags</div></a>
+        </div>
+        <div class="  card">
+          <a href="westerntop.html" class="card-title texttitle">
+            <img src="../img/11.9.webp" alt="Card Image">
+            <div class="card-title">Western Tops</div></a>
+        </div>
+        <div class="  card">
+          <a href="tunics.html" class="card-title texttitle">
+            <img src="../img/11.8.webp" alt="Card Image">
+            <div class="card-title">Tunics</div></a>
+        </div>
+        <!-- Add more cards here (up to 7 in a row) -->
+    </div>
+      
+   
+<!--- SECTION 8 CARD HOVER-->
+<div class="text-center mt-5 text">OUR PICKS FOR YOU</div>
+<div class="text-center mb-5 paragraph">ALWAYS FIND THE BEST WAYS FOR YOU.</div>
+<div class="card-container items">
+    <div class="card textcard item">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img    src="../img/1.webp" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+        <a href="#"> <div class="card-title texttitle">Gray Hoodi</div></a>
+        <p>$200.00 <span>$400.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+
+    </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img src="../img/10.webp" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+       <a href="#"> <div class="card-title texttitle">Cap</div></a>
+        <p>$200.00 <span>$400.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img src="../img/22.webp" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+       <a href="#"> <div class="card-title texttitle">Printed Tee-shirt</div></a>
+        <p>$250.00 <span>$500.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img src="../img/6.jpg" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+       <a href="#"> <div class="card-title texttitle">Dustgray Tee-shirt</div></a>
+        <p>$300.00 <span>$600.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <!-- Add more cards here (up to 7 in a row) -->
+</div>
+<div class="card-container mt-3">
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img src="../img/6.avif" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+        <a href="#"> <div class="card-title texttitle"> Tee-shirt for men</div></a>
+        <p>$300.00 <span>$600.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img src="../img/5.avif" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+        <a href="#"><div class="card-title texttitle">Tee-shirt For Women</div></a>
+        <p>$250.00 <span>$500.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img src="../img/home/18.jpg" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+        <a href="#"> <div class="card-title texttitle">Moissanite Rings for women</div></a>
+        <p>$205.00 <span>$410.00</span></p>
+
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+        </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img src="../img/home/19.jpg" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+       <a href="#" > <div class="card-title texttitle">Moissanite Diamond Rings for women</div></a>
+        <p>$225.00 <span>$450.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <!-- Add more cards here (up to 7 in a row) -->
+</div>
+
+
+<!---SECTION 9 4 CARD IN ONE ROW-->
+<div class="text-center mt-5 text">TRENDING PRODUCTS</div>
+<div class="text-center mb-5 paragraph">PRODUCTS ON TRENDING.</div>
+<div class="card-container">
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="newarival">Sale</button>
+
+            <button class="fifty">-50%</button>
+        </div>
+        <img    src="../img/10.1.webp" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+        <a href="#"> <div class="card-title texttitle">Moonstone Satchel </div></a>
+        <p>$300.00 <span>$600.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+
+    </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">Sale</button>
+            <button class="fifty">-50%</button>
+        </div>
+        <img src="../img/10.2.webp" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+       <a href="#"> <div class="card-title texttitle">Striped Maroon Backpack</div></a>
+        <p>$350.00 <span>$700.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+            <button class="fifty">-54%</button>
+        </div>
+        <img src="../img/10.3.webp" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+       <a href="#"> <div class="card-title texttitle">Yellow mini canvas bag</div></a>
+        <p>$290.00 <span>$640.00</span></p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <div class="card textcard">
+        <div class="card-buttons">
+            <button class="newarival">New Arival</button>
+        </div>
+        <img src="../img/10.4.webp" alt="Card Image">
+        <button class="button-hidden add-to-cart-btn" >ADD TO CART</button>
+
+       <a href="#"> <div class="card-title texttitle">Disney small leather bag</div></a>
+        <p>$60.00</p>
+        <div class="value"><i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        </div>
+
+    </div>
+    <!-- Add more cards here (up to 7 in a row) -->
+</div>
+<!--- SECTION 10 ICON CARD-->
+<div class="row ms-5 ">
+<div class="carde">
+  <div class="card-content">
+    <div class="icon-container">
+      <i class="bi bi-truck"></i>    </div>
+    <div class="text-container">
+      <h2 class="title">
+        FREE SHIPPING</h2>
+      <p class="description">Free shipping on all US order or order above $200
+        .</p>
+    </div>
+  </div>
+</div>
+<div class="carde">
+  <div class="card-content">
+    <div class="icon-container">
+      <i class="bi bi-life-preserver"></i>    </div>
+    <div class="text-container">
+      <h2 class="title">SUPPORT 24/7</h2>
+      <p class="description">Contact us 24 hours a day, 7 days a week
+        .</p>
+    </div>
+  </div>
+</div>
+<div class="carde">
+  <div class="card-content">
+    <div class="icon-container">
+      <i class="bi bi-recycle"></i>    </div>
+    <div class="text-container">
+      <h2 class="title">30 DAYS RETURN</h2>
+      <p class="description">Simply return it within 30 days for an exchange</p>
+    </div>
+  </div>
+</div>
+<div class="carde">
+  <div class="card-content">
+    <div class="icon-container">
+      <i class="bi bi-shield "></i>    </div>
+    <div class="text-container">
+      <h2 class="title">
+        100% PAYMENT SECURE</h2>
+      <p class="description">We ensure secure payment with PEV.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--- SECTION 11 THE 1 ROW AND THREE COLUMN -->
+<div class="row me-0 rowfirst pt-5 mt-3">
+  <div class="column colfirst col-md-4 col-12  ">
+    <h2 class="ps-5">CUSTOMER SERVICES</h2>
+    <ul>
+      <a href="login.html"><li>Login</li></a>
+      <a href="registration.html"><li>Registration</li></a>
+      <a href="contact.html"><li>Contact</li></a>
+      <a href="cookiespolicy.html"><li>Cookies Policy</li></a>
+    </ul>
+  </div>
+  <div class="column colfirst col-md-4 col-12 ">
+    <h2>Easy Shopping</h2>
+    <h4> Address: </h4>
+    <p> Islamabad | F-6 Markaz</p>
+      <h4>Hotline:<span> 03155364953</span></h4>
+      <h4>Email: <span>easyshopping@gmail.com</span></h4>
+  </div>
+  <div class="column colfirst col-md-4 col-12">
+    <h2>SUBSCRIBE & RECEIVE 10% OFF YOUR FIRST ORDER</h2>
+    
+  <div class="input">  <input type="email" placeholder="Enter your email"></div>
+    <h4 class="mt-4">CONNECT WITH US</h4>
+    <div class="social-icons">
+      <!-- Add social media icons here -->
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-tiktok"></i>    </div>
+  </div>
+</div>
+<!---SECTION 12 LAST SECTION -->
+<div class="lastnav">
+<div class="navbar fixed-bottom lastnav ">
+  <div class="container-fluid">
+    <p class="navbar-brand" >Your experience on this site will be improved by allowing cookies<span> Cookie Policy</span> </p>
+    <a href="#"><button>ALLOW COOKIES</button></a>
+  </div>
+</div>
+</div>
+
+
+
+<!----DESIGN CART -->
+<div class="cart" id="cart" >
+ 
+  <span id="close-cart" class="close-icon">&times;</span>
+  <h2>Shopping Cart</h2>
+  <div class="cart-items" id="cart-items" ></div>
+  <p> Sub Total: <span id="total" >$0</span></p>
+  <!-- <button id="checkout-btn">Checkout</button> -->
+  <button id="view-cart-btn" >View Cart</button>
+
+</div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+
+
+
+<!---cart functinality-->
+
+
+<!-- Your HTML content here -->
+
+<script src="../js/main.js"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      var element = document.querySelector('.reveal');
+      element.classList.add('animate__fadeInUp');
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('scroll', animateOnScroll);
+  });
+  
+  function animateOnScroll() {
+      var elements = document.querySelectorAll('.animate__animate');
+      
+      elements.forEach(function(element) {
+          var elementPosition = element.getBoundingClientRect().top;
+          var windowHeight = window.innerHeight;
+  
+          // If the element is in the viewport, add the animation class
+          if (elementPosition < windowHeight) {
+              element.classList.add('animate__fadeIn');
+          } else {
+              element.classList.remove('animate__fadeIn');
+          }
+      });
+  }
+  
+    </script>
+</body>
+
+</html>

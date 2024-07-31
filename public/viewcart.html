@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assests/style.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include other necessary scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+
+    <title>View Cart</title>
+    
+</head>
+<body>
+
+  <!--- SECTION 1 THE UPPER BAR -->
+    <nav class="navbar bg-body-tertiary top">
+        <div class="container-fluid">
+            <div class="header ms-5 ps-5">
+            <i class="bi bi-telephone"><a>03070879467</a></i>
+            <i class="bi bi-envelope"><a>easyshopping@gmail.com</a></i>
+            </div>
+          <form class="d-flex  me-5 ms-auto login">
+            <li class=" dropdown ">
+                <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">
+                  US
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">PK</a></li>
+                  
+                </ul>
+              </li> 
+              <i class="bi bi-person mt-4"><a href="login.html">LOGIN</a></i>          </form>
+        </div>
+      </nav>
+      <!--SECTION 2 THE NAVBAR-->
+    <nav class="navbar navbar-expand-lg  fixed  ">
+        <div class="container-fluid">
+         <img class="ms-5 ps-5 navbar-brand" src="../img/home/logo.png">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ms-auto  mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link  color" aria-current="page" href="index.html">HOME</a>
+              </li>
+              
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle color" href="#" role="button" data-bs-toggle="dropdown">
+                  CATEGORIES
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Statement Rings</a></li>
+                  <li><a class="dropdown-item" href="#">Wired Wrapped jewellery</a></li>
+                  <li><a class="dropdown-item" href="#">Loos Gemstones</a></li>
+                  <li><a class="dropdown-item" href="#">Brands</a></li>
+                  <li><a class="dropdown-item" href="#">Pendant</a></li>
+                  <li><a class="dropdown-item" href="#">Braclets</a></li>
+                  <li><a class="dropdown-item" href="#">Earrings</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="products.html">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="FAQ.html">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact.html">CONTACT</a>
+              </li>
+            </ul>
+            <form class="d-flex manuicon me-5 ms-auto ">
+                <i class="bi bi-heart "></i>  
+                <i class="bi bi-search"></i>             
+                <i class="bi bi-cart3 "></i>  
+                <div class="badge">0</div>
+            </form>
+          </div>
+        </div>
+      </nav>
+  <!---- view cart session -->
+  <h1 class="text-center contactheading mt-5 mb-5">SHOPPING CART</h1>
+    <div class="table-container">
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>IMAGE</th>
+                    <th>NAME</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th>SUBTOTAL</th>
+                    <th>EMAIL</th>
+
+                </tr>
+            </thead>
+            <tbody id="cart-item">
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+    
+        <div class="total-container">
+            <p>sub total</p>
+            <span id="totale" style="font-weight: bold;">$0.00</span>
+            
+        </div>
+        <div class="total-container">
+          <p style="font-size: 18px;">TOTAL<br><span style="font-size: 13px; font-weight: 400;">(Shipping fees not included)</span></p>
+          <span id="totael">$0.00</span>
+      </div>
+      <div class="checkout-container">
+        <!-- <button class="contactbtn" id="checkout-button " > CHECKOUT</button> -->
+    </div>    
+    </div>
+    <button id="checkout-btn" onclick="handleCheckout() " class="contactbtn" style="margin-left: 70%; padding: 10px;">Checkout</button>
+
+<!--- SECTION 11 THE 1 ROW AND THREE COLUMN -->
+<div class="row me-0 rowfirst pt-5 mt-3">
+  <div class="column colfirst col-md-4 col-12  ">
+    <h2 class="ps-5">CUSTOMER SERVICES</h2>
+    <ul>
+      <a href="login.html"><li>Login</li></a>
+      <a href="registration.html"><li>Registration</li></a>
+      <a href="contact.html"><li>Contact</li></a>
+      <a href="cookiespolicy.html"><li>Cookies Policy</li></a>
+    </ul>
+  </div>
+  <div class="column colfirst col-md-4 col-12 ">
+    <h2>Easy Shopping</h2>
+    <h4> Address: </h4>
+    <p>Islamabad | F-6 Markaz</p>
+      <h4>Hotline:<span> 03155364953</span></h4>
+      <h4>Email: <span>eayshopping@gmail.com</span></h4>
+  </div>
+  <div class="column colfirst col-md-4 col-12">
+    <h2>SUBSCRIBE & RECEIVE 10% OFF YOUR FIRST ORDER</h2>
+    
+  <div class="input">  <input type="email" placeholder="Enter your email"></div>
+    <h4 class="mt-4">CONNECT WITH US</h4>
+    <div class="social-icons">
+      <!-- Add social media icons here -->
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-tiktok"></i>    </div>
+  </div>
+</div>
+<!---SECTION 12 LAST SECTION -->
+<div class="lastnav">
+<div class="navbar fixed-bottom lastnav ">
+  <div class="container-fluid">
+    <p class="navbar-brand" >Your experience on this site will be improved by allowing cookies<span> Cookie Policy</span> </p>
+    <a href="#"><button>ALLOW COOKIES</button></a>
+  </div>
+</div>
+</div>
+
+
+
+<!----DESIGN CART -->
+<div class="cart" id="cart" style="overflow-y: scroll;">
+ 
+  <span id="close-cart" class="close-icon">&times;</span>
+  <h2>Shopping Cart</h2>
+  <div class="cart-items" id="cart-items"></div>
+  <p> Sub Total: <span id="total" >$0</span></p>
+  <!-- <button id="checkout-btn">Checkout</button> -->
+  <button id="view-cart-btn" >View Cart</button>
+
+</div>
+
+
+
+
+<script src="../js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+<script>
+  function getCookie(name) {
+      return Cookies.get(name);
+  }
+
+  function saveOrder() {
+    const cartItems = [];
+
+    $('#cart-item tr').each(function() {
+        const row = $(this);
+        const name = row.find('td:nth-child(2)').text();
+        const image = row.find('img').attr('src');
+        const quantity = parseInt(row.find('td:nth-child(4)').text());
+        const price = parseFloat(row.find('td:nth-child(3)').text().replace('$', ''));
+
+        cartItems.push({ name, image, quantity, price });
+    });
+
+    const token = getCookie('token');
+
+    fetch('/saveOrder', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ cartItems }),
+    })
+    .then(response => {
+        // Check if the response is not JSON
+        if (response.headers.get('Content-Type')?.includes('application/json')) {
+            return response.json();
+        } else {
+            return response.text().then(text => {
+                throw new Error(`Unexpected response format: ${text}`);
+            });
+        }
+    })
+    .then(data => {
+        if (data.type === 'success') {
+            alert(data.message);
+            // Optionally, redirect or clear the cart here
+        } else {
+            alert('Failed to save order items: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+  function handleCheckout() {
+      saveOrder();  // Call saveOrder function when checkout is clicked
+  }
+
+  $(document).ready(function() {
+      const cartTableBody = $('#cart-item');
+      const total = $('#total');
+      const totale = $('#totale');
+      const totael = $('#totael');
+      // const checkoutButton = $('#checkout-btn');
+
+      function loadCartData() {
+          const savedCartItems = localStorage.getItem('cartItems');
+          const savedTotalPrice = localStorage.getItem('totalPrice');
+
+          if (savedCartItems) {
+              const parser = new DOMParser();
+              const cartItemsDoc = parser.parseFromString(savedCartItems, 'text/html');
+              const cartItems = cartItemsDoc.body.childNodes;
+
+              const token = getCookie('token');
+              console.log('Retrieved token:', token);
+              let userEmail = 'Unknown';
+
+              if (token) {
+                  try {
+                      const decodedToken = jwt_decode(token);
+                      console.log('Decoded token:', decodedToken);
+                      userEmail = decodedToken.email || 'Unknown';
+                  } catch (e) {
+                      console.error('Error decoding token:', e);
+                  }
+              } else {
+                  alert('You are not login so u can not  checkout');
+              }
+
+              cartItems.forEach(cartItem => {
+                  if (cartItem.nodeType === Node.ELEMENT_NODE) {
+                      const itemName = cartItem.querySelector('h4').innerText;
+                      const itemImage = cartItem.querySelector('img').src;
+                      const itemPrice = parseFloat(cartItem.querySelector('.price').innerText.replace('$', ''));
+                      const itemQuantity = parseInt(cartItem.querySelector('.quantity').innerText);
+                      const itemTotal = itemPrice * itemQuantity;
+
+                      const row = $('<tr>');
+                      row.html(`
+                          <td><img src="${itemImage}" alt="${itemName}"></td>
+                          <td style="margin-left:-40%">${itemName}</td>
+                          <td>$${itemPrice.toFixed(2)}</td>
+                          <td>${itemQuantity}</td>
+                          <td>$${itemTotal.toFixed(2)}</td>
+                          <td>${userEmail}</td>
+                      `);
+                      cartTableBody.append(row);
+                  }
+              });
+
+              total.text(`$${parseFloat(savedTotalPrice).toFixed(2)}`);
+              totale.text(`$${parseFloat(savedTotalPrice).toFixed(2)}`);
+              totael.text(`$${parseFloat(savedTotalPrice).toFixed(2)}`);
+          }
+      }
+
+      loadCartData();
+
+      
+  });
+</script>
+
+
+
+
+</body>
+</html>
