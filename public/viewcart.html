@@ -117,7 +117,7 @@
         <!-- <button class="contactbtn" id="checkout-button " > CHECKOUT</button> -->
     </div>    
     </div>
-    <button id="checkout-btn" onclick="handleCheckout() " class="contactbtn" style="margin-left: 70%; padding: 10px;">Checkout</button>
+    <button id="checkout-btn" onclick="handleCheckout() " class="contactbtn" zstyle="margin-left: 70%; padding: 10px;">Checkout</button>
 
 <!--- SECTION 11 THE 1 ROW AND THREE COLUMN -->
 <div class="row me-0 rowfirst pt-5 mt-3">
@@ -221,7 +221,10 @@
     .then(data => {
         if (data.type === 'success') {
             alert(data.message);
+
             // Optionally, redirect or clear the cart here
+            window.location.href = '/index';
+
         } else {
             alert('Failed to save order items: ' + data.message);
         }
@@ -240,7 +243,7 @@
       const total = $('#total');
       const totale = $('#totale');
       const totael = $('#totael');
-      // const checkoutButton = $('#checkout-btn');
+      const checkoutButton = $('#checkout-btn');
 
       function loadCartData() {
           const savedCartItems = localStorage.getItem('cartItems');
@@ -295,10 +298,11 @@
       }
 
       loadCartData();
+      // checkoutButton.on('click', handleCheckout);
 
       
   });
-</script>
+   </script>
 
 
 

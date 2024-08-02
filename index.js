@@ -331,6 +331,8 @@ app.use('/saveorder',saveOrder);
 
 
 
+const contactRoute = require('./routes/contact');
+app.use('/contact', contactRoute);
 
 
 // app.post('/checkout', authMiddleware, async (req, res) => {

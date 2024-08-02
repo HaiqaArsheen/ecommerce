@@ -45,7 +45,7 @@ router.post('/', verifyToken, (req, res) => {
                 }
             });
         });
-        res.status(200).json({ type: 'success', message: 'Order items saved successfully' });
+        res.status(200).json({ type: 'success', message: 'Order items saved successfully' ,redirectUrl: '/index' });
     }
 });
 
